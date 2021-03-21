@@ -215,7 +215,7 @@ app.get('/higherBalance/:listSize', async (req, res) => {
   }
 });
 
-//clientes prime - um cliente com maior saldo de cada agência
+//clientes prime - um cliente com maior saldo de cada agência adicionado para agência 99
 app.patch('/prime', async (req, res) => {
   try {
     const accounts = await accountModel.find({});
