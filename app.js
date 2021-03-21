@@ -1,5 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
 
 import { accountsRouter } from './routes/accountsRouter.js';
 
@@ -7,7 +9,7 @@ import { accountsRouter } from './routes/accountsRouter.js';
 (async () => {
   try {
     await mongoose.connect(
-      'mongodb+srv://hgfdev:655321007@cluster0.phrrv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+      `mongodb+srv://${process.env.USER_DB}:${process.env.PASSWORD}@cluster0.phrrv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
