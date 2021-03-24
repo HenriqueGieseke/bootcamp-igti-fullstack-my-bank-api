@@ -6,6 +6,7 @@ dotenv.config();
 import { accountsRouter } from './routes/accountsRouter.js';
 
 const PORT = process.env.PORT || 3000;
+const host = '0.0.0.0';
 
 //connectar ao mongodb pelo mongoose
 (async () => {
@@ -30,6 +31,6 @@ const app = express();
 app.use(express.json());
 app.use(accountsRouter);
 
-app.listen(PORT, () => {
+app.listen(PORT, host, () => {
   console.log('API online');
 });
