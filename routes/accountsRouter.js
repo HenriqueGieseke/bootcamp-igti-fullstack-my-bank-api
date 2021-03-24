@@ -159,6 +159,8 @@ app.get('/balanceAverage/:ag', async (req, res) => {
 
     if (agAccounts.length === 0) {
       res.send(`Agência não encontrada. Você buscou a agência:${ag}.`);
+    } else if(ag === NaN) {
+      res.send('O valor que você inseriu não é válido.')
     }
 
     let totalBalance = 0;
